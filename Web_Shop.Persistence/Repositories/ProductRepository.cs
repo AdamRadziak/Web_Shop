@@ -15,8 +15,9 @@ namespace Web_Shop.Persistence.Repositories
             return Entities.FirstOrDefaultAsync(e => e.Equals(ProductId));
         }
 
-        Task<Product?> IProductRepository.GetProductByNameAsync(string ProductName)
+        Task <Product?> IProductRepository.GetProductByNameAsync(string ProductName)
         {
+            
             return Entities.FirstOrDefaultAsync(e => e.Equals(ProductName));
         }
 

@@ -8,6 +8,6 @@ namespace Web_Shop.Persistence.Repositories.Interfaces
 
         Task<bool> IsProductNameExistAsync(string ProductName);
         Task<Product?> GetProductByIdAsync(ulong ProductId);
-        Task<Product?> GetProductByNameAsync(string ProductName);
+        Task <Product?> GetProductByNameAsync(string ProductName);
     }
 }
