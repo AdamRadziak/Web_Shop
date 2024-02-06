@@ -21,8 +21,11 @@ namespace Web_Shop.Application.Mappings.PropertiesMappings
 
         protected override SievePropertyMapper MapProperties(SievePropertyMapper mapper)
         {
-            return mapper
-                .ApplyConfiguration<SieveConfigurationForCustomer>();
+            // create mapper instance of SievePropertyMapper
+            var map = mapper.ApplyConfiguration<SieveConfigurationForCustomer>().
+                ApplyConfiguration<SieveConfigurationForProduct>();
+
+            return map;
         }
     }
 }

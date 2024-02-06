@@ -14,12 +14,14 @@ namespace Web_Shop.Persistence.UOW
 
         public ICustomerRepository CustomerRepository { get; private set; }
 
+        public IProductRepository ProductRepository { get; private set; }
         public UnitOfWork(WwsishopContext dbContext)
         {
             _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
             _repositories = new Hashtable();
 
             CustomerRepository = new CustomerRepository(_dbContext);
+            ProductRepository = new ProductRepository(_dbContext);
         }
 
         public IGenericRepository<T> Repository<T>() where T : class

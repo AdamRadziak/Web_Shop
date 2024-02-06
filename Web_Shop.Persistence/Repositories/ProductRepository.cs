@@ -10,25 +10,25 @@ namespace Web_Shop.Persistence.Repositories
     {
         public ProductRepository(WwsishopContext dbContext) : base(dbContext) { }
 
-        Task<Product?> IProductRepository.GetProductByIdAsync(ulong ProductId)
+        public async Task<Product?> GetProductByIdAsync(ulong ProductId)
         {
-            return Entities.FirstOrDefaultAsync(e => e.Equals(ProductId));
+            return await Entities.FirstOrDefaultAsync(e => e.Equals(ProductId));
         }
 
-        Task <Product?> IProductRepository.GetProductByNameAsync(string ProductName)
+        public async Task <Product?> GetProductByNameAsync(string ProductName)
         {
             
-            return Entities.FirstOrDefaultAsync(e => e.Equals(ProductName));
+            return await Entities.FirstOrDefaultAsync(e => e.Equals(ProductName));
         }
 
-        Task<bool> IProductRepository.IsProductIdExistAsync(ulong ProductId)
+        public async Task<bool> IsProductIdExistAsync(ulong ProductId)
         {
-            return Entities.AnyAsync(e => e.IdProduct == ProductId);
+            return await Entities.AnyAsync(e => e.IdProduct == ProductId);
         }
 
-        Task<bool> IProductRepository.IsProductNameExistAsync(string ProductName)
+        public async Task<bool> IsProductNameExistAsync(string ProductName)
         {
-            return Entities.AnyAsync(e => e.Name == ProductName);
+            return await Entities.AnyAsync(e => e.Name == ProductName);
         }
     }
     }
