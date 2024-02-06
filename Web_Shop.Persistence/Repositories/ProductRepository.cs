@@ -21,15 +21,11 @@ namespace Web_Shop.Persistence.Repositories
             return await Entities.FirstOrDefaultAsync(e => e.Equals(ProductName));
         }
 
-        public async Task<bool> IsProductIdExistAsync(ulong ProductId)
+        public async Task<bool> IsProductSkuExistAsync(string sku)
         {
-            return await Entities.AnyAsync(e => e.IdProduct == ProductId);
+            return await Entities.AnyAsync(e => e.Sku == sku);
         }
 
-        public async Task<bool> IsProductNameExistAsync(string ProductName)
-        {
-            return await Entities.AnyAsync(e => e.Name == ProductName);
-        }
     }
     }
 
