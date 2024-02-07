@@ -8,8 +8,8 @@ using Web_Shop.Application.Services.Interfaces;
 
 namespace Web_Shop.RestAPI.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("[controller]")]
     public class ProductController : ControllerBase
     {
         private readonly IProductService _productService;

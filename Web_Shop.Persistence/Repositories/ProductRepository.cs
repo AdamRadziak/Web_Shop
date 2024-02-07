@@ -12,13 +12,13 @@ namespace Web_Shop.Persistence.Repositories
 
         public async Task<Product?> GetProductByIdAsync(ulong ProductId)
         {
-            return await Entities.FirstOrDefaultAsync(e => e.Equals(ProductId));
+            return await Entities.FirstOrDefaultAsync(e => e.IdProduct == ProductId);
         }
 
         public async Task <Product?> GetProductByNameAsync(string ProductName)
         {
             
-            return await Entities.FirstOrDefaultAsync(e => e.Equals(ProductName));
+            return await Entities.FirstOrDefaultAsync(e => e.Name == ProductName);
         }
 
         public async Task<bool> IsProductSkuExistAsync(string sku)

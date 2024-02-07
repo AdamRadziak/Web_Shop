@@ -3,6 +3,8 @@ using Web_Shop.Application.Extensions;
 using Web_Shop.Application.Utils;
 using FluentValidation.AspNetCore;
 using Web_Shop.Persistence.UOW.Interfaces;
+using Web_Shop.Application.Services.Interfaces;
+using Web_Shop.Application.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,7 +18,8 @@ builder.Services.AddControllers().AddJsonOptions(options =>
 });
 builder.Services.AddFluentValidationAutoValidation();
 builder.Services.AddFluentValidationClientsideAdapters();
-
+// add manually services
+builder.Services.AddScoped<IProductService, ProductService>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
