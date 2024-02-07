@@ -34,6 +34,11 @@ namespace Web_Shop.Application.Services
         {
             try
             {
+                // if sku of product exist ( this must be unique)
+                if (await _unitOfWork.ProductRepository.IsProductSkuExistAsync(dto.Sku))
+                {
+                    return (false, default(Product), HttpStatusCode.BadRequest, "this product sku: " + dto.Sku + " exist.");
+                }
                 var newEntity = dto.MapProduct();
                 var result = await AddAndSaveAsync(newEntity);
                 return (true, result.entity, HttpStatusCode.OK, string.Empty);
@@ -54,11 +59,6 @@ namespace Web_Shop.Application.Services
                 {
                     return existingEntityResult;
                 }
-                // if sku of updated product not exist
-                //if (!await _unitOfWork.ProductRepository.IsProductSkuExistAsync(dto.Sku))
-                //{
-                //    return (false, default(Product), HttpStatusCode.BadRequest, "This product sku: " + dto.Sku + " not exist.");
-                //}
                 var domainEntity = dto.MapProduct();
 
                 domainEntity.IdProduct = id;
