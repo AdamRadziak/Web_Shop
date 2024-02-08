@@ -4,7 +4,9 @@ using Swashbuckle.AspNetCore.Annotations;
 using Web_Shop.Application.DTOs;
 using Web_Shop.Application.Helpers.PagedList;
 using Web_Shop.Application.Mappings;
+using Web_Shop.Application.Services;
 using Web_Shop.Application.Services.Interfaces;
+using Web_Shop.Persistence.Repositories;
 
 namespace Web_Shop.RestAPI.Controllers
 {
@@ -23,7 +25,7 @@ namespace Web_Shop.RestAPI.Controllers
 
         [HttpGet("{id}")]
         [SwaggerOperation(OperationId = "GetProductById")]
-        public async Task<ActionResult<GetSingleProductDTO>> GetProduct(ulong id)
+        public async Task<ActionResult<GetSingleProductDTO>> GetProductById(ulong id)
         {
             var result = await _productService.GetByIdAsync(id);
 
@@ -61,7 +63,7 @@ namespace Web_Shop.RestAPI.Controllers
                 return Problem(statusCode: (int)result.StatusCode, title: "Add error.", detail: result.ErrorMessage);
             }
 
-            return CreatedAtAction(nameof(GetProduct), new { id = result.entity.IdProduct }, result.entity.MapGetSingleProductDTO());
+            return CreatedAtAction(nameof(GetProductById), new { id = result.entity.IdProduct }, result.entity.MapGetSingleProductDTO());
         }
         // update existing product
         [HttpPut("update/{id}")]
@@ -76,6 +78,20 @@ namespace Web_Shop.RestAPI.Controllers
             }
 
             return StatusCode((int)result.StatusCode, result.entity.MapGetSingleProductDTO());
+        }
+        // delete product
+        [HttpDelete("{id}")]
+        [SwaggerOperation(OperationId = "DeleteProduct")]
+        public async Task<IActionResult> DeleteCustomer(ulong id)
+        {
+            var result = await _productService.DeleteAndSaveAsync(id);
+
+            if (!result.IsSuccess)
+            {
+                return Problem(statusCode: (int)result.StatusCode, title: "Delete error.", detail: result.ErrorMessage);
+            }
+
+            return NoContent();
         }
     }
 }

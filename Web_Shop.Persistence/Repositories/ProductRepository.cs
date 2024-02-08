@@ -10,16 +10,7 @@ namespace Web_Shop.Persistence.Repositories
     {
         public ProductRepository(WwsishopContext dbContext) : base(dbContext) { }
 
-        public async Task<Product?> GetProductByIdAsync(ulong ProductId)
-        {
-            return await Entities.FirstOrDefaultAsync(e => e.IdProduct == ProductId);
-        }
 
-        public async Task <Product?> GetProductByNameAsync(string ProductName)
-        {
-            
-            return await Entities.FirstOrDefaultAsync(e => e.Name == ProductName);
-        }
 
         public async Task<bool> IsProductSkuExistAsync(string sku)
         {
