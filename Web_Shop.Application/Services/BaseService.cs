@@ -1,18 +1,14 @@
-﻿using System.Diagnostics;
-using System;
-using System.Net;
-using System.Xml.Linq;
-using Web_Shop.Application.Services.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using Web_Shop.Persistence.UOW.Interfaces;
 using Microsoft.Extensions.Options;
 using Sieve.Models;
 using Sieve.Services;
-using Microsoft.EntityFrameworkCore;
-using Web_Shop.Application.DTOs;
-using Web_Shop.Application.Helpers.PagedList;
-using WWSI_Shop.Persistence.MySQL.Model;
+using System.Diagnostics;
+using System.Net;
 using Web_Shop.Application.Extensions;
+using Web_Shop.Application.Helpers.PagedList;
+using Web_Shop.Application.Services.Interfaces;
+using Web_Shop.Persistence.UOW.Interfaces;
 
 namespace Web_Shop.Application.Services
 {

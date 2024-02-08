@@ -1,17 +1,4 @@
-﻿using Microsoft.Data.Sqlite;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
-using Moq;
-using System;
-using System.Collections.Generic;
-using System.Data.Common;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Text;
-using System.Threading.Tasks;
-using Web_Shop.Persistence.Repositories;
-using WWSI_Shop.Persistence.MySQL.Context;
-using WWSI_Shop.Persistence.MySQL.Model;
+﻿using Web_Shop.Persistence.Repositories;
 
 namespace Web_Shop.Tests_InMemoryDB
 {

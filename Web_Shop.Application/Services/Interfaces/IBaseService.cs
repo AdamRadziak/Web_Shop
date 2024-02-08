@@ -1,10 +1,5 @@
 ﻿using Sieve.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using Web_Shop.Application.Helpers.PagedList;
 
 namespace Web_Shop.Application.Services.Interfaces

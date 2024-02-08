@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace WWSI_Shop.Persistence.MySQL.Model;
+﻿namespace WWSI_Shop.Persistence.MySQL.Model;
 
 public partial class OrderItem
 {

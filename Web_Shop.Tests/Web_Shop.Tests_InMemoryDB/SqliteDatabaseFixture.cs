@@ -1,10 +1,5 @@
 ﻿using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WWSI_Shop.Persistence.MySQL.Context;
 using WWSI_Shop.Persistence.MySQL.Model;
 using BC = BCrypt.Net.BCrypt;

@@ -1,30 +1,21 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Sieve.Models;
 using Sieve.Services;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using Web_Shop.Application.DTOs;
+using Web_Shop.Application.Mappings;
 using Web_Shop.Application.Services.Interfaces;
 using Web_Shop.Persistence.UOW.Interfaces;
 using WWSI_Shop.Persistence.MySQL.Model;
-using Web_Shop.Application.Extensions;
-using Web_Shop.Application.Helpers.PagedList;
-using Web_Shop.Application.Mappings;
 
 namespace Web_Shop.Application.Services
 {
     public class ProductService : BaseService<Product>, IProductService
 
     {
-        public ProductService(ILogger<Product> logger, ISieveProcessor sieveProcessor, 
-            IOptions<SieveOptions> sieveOptions, 
+        public ProductService(ILogger<Product> logger, ISieveProcessor sieveProcessor,
+            IOptions<SieveOptions> sieveOptions,
             IUnitOfWork unitOfWork) : base(logger, sieveProcessor, sieveOptions, unitOfWork)
         {
 
@@ -43,7 +34,7 @@ namespace Web_Shop.Application.Services
                 var result = await AddAndSaveAsync(newEntity);
                 return (true, result.entity, HttpStatusCode.OK, string.Empty);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return LogError(ex.Message);
             }
@@ -67,7 +58,7 @@ namespace Web_Shop.Application.Services
 
 
             }
-            catch(Exception ex) 
+            catch (Exception ex)
             {
                 return LogError(ex.Message);
             }

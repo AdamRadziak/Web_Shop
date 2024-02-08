@@ -1,12 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Text.Json.Serialization;
 using System.Text.Json;
-using System.Threading.Tasks;
+using System.Text.Json.Serialization;
 using Web_Shop.Persistence.Repositories.Interfaces;
 using Web_Shop.Persistence.UOW.Interfaces;
 using WWSI_Shop.Persistence.MySQL.Model;
@@ -26,6 +20,7 @@ namespace Web_Shop.Application.Utils
             try
             {
                 await PopulateTableAsync<Customer>("SeedData/customers.json", unitOfWork);
+                await PopulateTableAsync<Product>("SeedData/products.json", unitOfWork);
 
             }
             catch (Exception ex)

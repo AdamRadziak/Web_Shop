@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using WWSI_Shop.Persistence.MySQL.Model;
 
 namespace WWSI_Shop.Persistence.MySQL.Context;

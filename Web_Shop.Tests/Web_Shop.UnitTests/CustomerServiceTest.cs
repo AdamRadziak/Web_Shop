@@ -1,12 +1,7 @@
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Moq;
-using Sieve.Models;
-using Sieve.Services;
-using System.Runtime.CompilerServices;
 using Web_Shop.Application.CustomQueries;
 using Web_Shop.Application.DTOs;
-using Web_Shop.Application.Mappings;
 using Web_Shop.Application.Mappings.PropertiesMappings;
 using Web_Shop.Application.Services;
 using Web_Shop.Persistence.Repositories.Interfaces;

@@ -1,6 +1,4 @@
-﻿using System.Linq.Expressions;
-
-namespace Web_Shop.Persistence.Repositories.Interfaces
+﻿namespace Web_Shop.Persistence.Repositories.Interfaces
 {
     public interface IGenericRepository<T> where T : class
     {

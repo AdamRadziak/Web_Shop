@@ -28,7 +28,7 @@ namespace Web_Shop.Application.Extensions
                 .AddScoped(typeof(IProductService), typeof(ProductService));
 
             services.AddScoped<IValidator<AddUpdateCustomerDTO>, AddUpdateCustomerDTOValidator>();
-            services.AddScoped<IValidator<AddUpdateProductDTO>, AddUpdateProductDTOValidator>();
+            // services.AddScoped<IValidator<AddUpdateProductDTO>, AddUpdateProductDTOValidator>();
         }
     }
 }

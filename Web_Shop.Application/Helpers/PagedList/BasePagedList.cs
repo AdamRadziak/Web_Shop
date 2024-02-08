@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Web_Shop.Application.Helpers.PagedList
+﻿namespace Web_Shop.Application.Helpers.PagedList
 {
     public abstract class BasePagedList<T, TOut> : PagedListMetaData<TOut>, IPagedList<T, TOut>
     {

@@ -4,9 +4,7 @@ using Swashbuckle.AspNetCore.Annotations;
 using Web_Shop.Application.DTOs;
 using Web_Shop.Application.Helpers.PagedList;
 using Web_Shop.Application.Mappings;
-using Web_Shop.Application.Services;
 using Web_Shop.Application.Services.Interfaces;
-using Web_Shop.Persistence.Repositories;
 
 namespace Web_Shop.RestAPI.Controllers
 {

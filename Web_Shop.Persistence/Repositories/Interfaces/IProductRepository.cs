@@ -1,6 +1,4 @@
-﻿using WWSI_Shop.Persistence.MySQL.Model;
-
-namespace Web_Shop.Persistence.Repositories.Interfaces
+﻿namespace Web_Shop.Persistence.Repositories.Interfaces
 {
     public interface IProductRepository
     {
