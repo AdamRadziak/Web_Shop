@@ -16,9 +16,9 @@ namespace Web_Shop.Persistence.Repositories
             return await Entities.AnyAsync(e => e.Sku == sku);
         }
 
-        public async Task<int> GetProductSkuCountAsync(IQueryable<Product> repository, string sku)
+        public async Task<int> GetProductSkuCountAsync( string sku)
         {
-            return await repository.CountAsync(e => e.Sku == sku);
+            return await Entities.CountAsync(e => e.Sku == sku);
         }
 
     }

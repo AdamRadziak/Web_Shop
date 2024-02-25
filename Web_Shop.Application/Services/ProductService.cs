@@ -53,8 +53,7 @@ namespace Web_Shop.Application.Services
                     return existingEntityResult;
                 }
                 // if sku of product exist ( this must be unique)
-                var repository = _unitOfWork.Repository<Product>().Entities.AsNoTracking();
-                var same_sku_count = await _unitOfWork.ProductRepository.GetProductSkuCountAsync(repository, dto.Sku);
+                var same_sku_count = await _unitOfWork.ProductRepository.GetProductSkuCountAsync( dto.Sku);
                 if (same_sku_count > 1)
                 {
                         return (false, default(Product), HttpStatusCode.BadRequest, "this product sku: " + dto.Sku + " exist.");

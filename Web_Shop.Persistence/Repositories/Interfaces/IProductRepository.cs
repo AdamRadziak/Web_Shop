@@ -6,6 +6,6 @@ namespace Web_Shop.Persistence.Repositories.Interfaces
     {
         Task<bool> IsProductSkuExistAsync(string sku);
 
-        Task<int> GetProductSkuCountAsync(IQueryable<Product> repository, string sku);
+        Task<int> GetProductSkuCountAsync( string sku);
     }
 }
