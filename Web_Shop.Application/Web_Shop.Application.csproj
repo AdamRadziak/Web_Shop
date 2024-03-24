@@ -9,12 +9,18 @@
   <ItemGroup>
 	<PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
 	<PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+	<PackageReference Include="MediatR" Version="12.2.0" />
 	<PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="7.0.4" />
 	<PackageReference Include="Sieve" Version="2.5.5" />
   </ItemGroup>
 	
   <ItemGroup>
     <ProjectReference Include="..\Web_Shop.Persistence\Web_Shop.Persistence.csproj" />
+  </ItemGroup>
+	
+  <ItemGroup>
+    <Folder Include="Features\Commands\" />
+    <Folder Include="Features\Queries\" />
   </ItemGroup>
 
 </Project>
