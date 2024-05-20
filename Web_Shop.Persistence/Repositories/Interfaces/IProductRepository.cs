@@ -2,7 +2,7 @@
 
 namespace Web_Shop.Persistence.Repositories.Interfaces
 {
-    public interface IProductRepository
+    public interface IProductRepository : IGenericRepository<Product>
     {
         Task<bool> IsProductSkuExistAsync(string sku);
 
